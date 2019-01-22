@@ -1,0 +1,15 @@
+# Editor metadata
+.vscode
+
+# Compiled binary
+api
+
+# Environment variables
+.env
+
+# macOS .DS_Store
+.DS_Store
+
+# Go modules
+go.mod
+go.sum
