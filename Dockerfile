@@ -18,14 +18,14 @@ RUN go mod download
 COPY . .
 
 # Build the application
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build api.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
 
 # Copy binary to a lightweight container
 FROM scratch
-COPY --from=builder /app/api /app/
+COPY --from=builder /app/main /app/
 
 # Expose container port 8000
 EXPOSE 8000
 
 # Start the application
-ENTRYPOINT [ "/app/api" ]
+ENTRYPOINT [ "/app/main" ]

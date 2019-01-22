@@ -2,7 +2,7 @@
 .vscode
 
 # Compiled binary
-api
+main
 
 # Environment variables
 .env

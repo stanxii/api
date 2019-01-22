@@ -3,7 +3,7 @@ all: local
 
 # Build and run the application locally
 local:
-	clear && go build api.go && ./api
+	clear && go build main.go && ./main
 
 # Build a Docker image of the application
 image:
@@ -15,4 +15,4 @@ docker:
 
 # Delete local compiled binary
 clean:
-	rm api
+	rm main
