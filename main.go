@@ -7,13 +7,12 @@ import (
 	"github.com/SnapshotApp/api/handler"
 	"github.com/SnapshotApp/api/resolver"
 	"github.com/SnapshotApp/api/schema"
-
-	graphql "github.com/graph-gophers/graphql-go"
+	"github.com/graph-gophers/graphql-go"
 )
 
 func main() {
 	// Parse GraphQL schema
-	s, err := schema.GetSchema("./schema/schema.graphql")
+	s, err := schema.GetSchema("schema/schema.graphql")
 	if err != nil {
 		log.Fatalf("Unable to parse GraphQL schema: %s\n", err)
 	}

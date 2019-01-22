@@ -1,5 +1,5 @@
 # Use Golang version 1.11 as a base image
-FROM golang:1.11 as builder
+FROM golang:1.11 AS builder
 
 # Opt into Go modules available in Golang version 1.11
 ENV GO111MODULE=on
@@ -23,6 +23,7 @@ RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build main.go
 # Copy binary to a lightweight container
 FROM scratch
 COPY --from=builder /app/main /app/
+COPY --from=builder /app/schema/schema.graphql schema/
 
 # Expose container port 8000
 EXPOSE 8000
