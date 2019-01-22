@@ -10,26 +10,28 @@ It's built with
 ## Quick Start
 You will need [Go (>= version 1.11)](https://golang.org/dl/) and [Docker](https://www.docker.com/) installed.
 
-- Build and run the application locally
+### Build and run the application locally
 ```
 make
 ```
 
-- Build a Docker image of the application
+### Build a Docker image of the application
 ```
 make image
 ```
 
-- Run the application in a Docker container (after an image has been built).
+### Run the application in a Docker container
+This must be run after an image has been built.
 You will need the environment variables defined in a file called `.env`.
+
 ```
 make docker
 ```
 
-- Once the API is running locally, you can hit it at `localhost:8000/graphql`.
+Once the API is running locally, you can hit it at `localhost:8000/graphql`.
 If it's running in a local container, you can hit it at `localhost/graphql`.
 
-- Delete the local compiled binary
+### Delete the local compiled binary
 ```
 make clean
 ```

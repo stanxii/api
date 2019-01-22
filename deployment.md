@@ -1,5 +1,6 @@
-## Deployment
-### Initial deployment to Google Kubernetes Engine
+# Deployment
+
+## Initial deployment to Google Kubernetes Engine
 Execute the following from the Google Cloud Platform console.
 For more details, see https://cloud.google.com/kubernetes-engine/docs/tutorials/hello-app.
 
@@ -58,18 +59,18 @@ kubectl expose deployment snapshot --type=LoadBalancer --port 80 --target-port 8
 kubectl get service
 ```
 
-### Scaling the application
-- Update replicas
+## Scaling the application
+### Update replicas
 ```
 kubectl scale deployment snapshot --replicas=3
 ```
 
-- See Kubernetes pod details
+### See Kubernetes pod details
 ```
 kubectl get pods
 ```
 
-### Deploy a new app version
+## Deploying a new app version
 1) Build an updated image
 ```
 docker build -t gcr.io/${PROJECT_ID}/snapshot-api-gateway:v2 .
@@ -85,7 +86,7 @@ docker push gcr.io/${PROJECT_ID}/snapshot-api-gateway:v2
 kubectl set image deployment/snapshot 
 ```
 
-### Take down the deployment
+## Take down the deployment
 1) Delete the service
 ```
 kubectl delete service hello-web
