@@ -7,7 +7,7 @@ docker build --tag=snapshot-api-gateway .
 ```
 - Run the Docker image locally
 ```
-docker run -p 8000:80 snapshot-api-gateway
+docker run -p 80:8000 snapshot-api-gateway
 ```
 
 ## Database

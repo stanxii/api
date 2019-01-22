@@ -26,6 +26,9 @@ You will need the environment variables defined in a file called `.env`.
 make docker
 ```
 
+- Once the API is running locally, you can hit it at `localhost:8000/graphql`.
+If it's running in a local container, you can hit it at `localhost/graphql`.
+
 - Delete the local compiled binary
 ```
 make clean

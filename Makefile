@@ -11,7 +11,7 @@ image:
 
 # Run the application in a Docker container (after an image has been built)
 docker:
-	docker run --env-file .env -p 8000:80 snapshot-api-gateway
+	docker run --env-file .env -p 80:8000 snapshot-api-gateway
 
 # Delete local compiled binary
 clean:
