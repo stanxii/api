@@ -5,11 +5,10 @@ import (
 	"log"
 
 	"github.com/SnapshotApp/model"
-	"github.com/graph-gophers/graphql-go"
 )
 
 // User resolves queries for a User
-func (r *Resolver) User(ctx context.Context, args struct{ ID graphql.ID }) (*UserResolver, error) {
+func (r *Resolver) User(ctx context.Context, args struct{ ID model.ID }) (*UserResolver, error) {
 	// Get User by ID from user service
 	user := &model.User{}
 	log.Printf("Resolved user: %v", user)
@@ -24,7 +23,7 @@ type UserResolver struct {
 }
 
 // ID resolves the ID field of a User
-func (r *UserResolver) ID() graphql.ID {
+func (r *UserResolver) ID() model.ID {
 	return r.user.ID
 }
 
